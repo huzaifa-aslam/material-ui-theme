@@ -3,18 +3,21 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Stack, Typography, Link } from '@mui/material';
 // layouts
 import LoginLayout from '../../layouts/login';
+
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 //
 import AuthWithSocial from './AuthWithSocial';
 import AuthRegisterForm from './AuthRegisterForm';
+import { RegisterSteps } from '../../pages/components/multiStepForm';
 
 // ----------------------------------------------------------------------
 
 export default function Register() {
   return (
     <LoginLayout title="Manage the job more effectively with Minimal">
-      <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
+      <RegisterSteps />
+      {/* <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
         <Typography variant="h4">Get started absolutely free.</Typography>
 
         <Stack direction="row" spacing={0.5}>
@@ -28,10 +31,7 @@ export default function Register() {
 
       <AuthRegisterForm />
 
-      <Typography
-        component="div"
-        sx={{ color: 'text.secondary', mt: 3, typography: 'caption', textAlign: 'center' }}
-      >
+      <Typography component="div" sx={{ color: 'text.secondary', mt: 3, typography: 'caption', textAlign: 'center' }}>
         {'By signing up, I agree to '}
         <Link underline="always" color="text.primary">
           Terms of Service
@@ -41,7 +41,7 @@ export default function Register() {
           Privacy Policy
         </Link>
         .
-      </Typography>
+      </Typography> */}
 
       <AuthWithSocial />
     </LoginLayout>
