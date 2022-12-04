@@ -144,7 +144,7 @@ export default function Router() {
           ),
         },
         {
-          path: 'register',
+          path: 'register/default',
           element: (
             <GuestGuard>
               <RegisterPage />

@@ -1,50 +1,50 @@
+import { Stack, IconButton, InputAdornment, Alert } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import { forwardRef, useImperativeHandle } from 'react';
 import { useForm } from 'react-hook-form';
+import FormProvider, { RHFTextField } from '../../../../components/hook-form';
 
-const PersonalInfo = ({ formData, setFormData }) => {
-  const { register, handleSubmit } = useForm();
+const PersonalInfo = forwardRef((props, ref) => {
+  const methods = useForm();
 
+  const { register, handleSubmit } = methods;
+
+  const { formData, setFormData, page, setPage } = props;
   const onSubmit = (data) => {
+    setPage(page + 1);
+
     setFormData({
       ...formData,
       ...data,
     });
-
-    console.log(formData);
   };
 
+  const onError = (error) => {
+    console.log(error);
+    setPage(page);
+  };
+
+  useImperativeHandle(ref, () => ({
+    submitForm() {
+      handleSubmit(onSubmit, onError)();
+    },
+  }));
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="firstName">
-        First Name
-        <input type="text" {...register('firstName')} />
-      </label>
-      <label htmlFor="lastName">
-        Last Name
-        <input type="text" {...register('lastName')} />
-      </label>
-      <label htmlFor="address">
-        Last Name
-        <input type="text" {...register('address')} />
-      </label>
-      <label htmlFor="city">
-        Last Name
-        <input type="text" {...register('city')} />
-      </label>
-      <label htmlFor="state">
-        Last Name
-        <input type="text" {...register('state')} />
-      </label>
-      <label htmlFor="birthDate">
-        Last Name
-        <input type="text" {...register('birthDate')} />
-      </label>
-      <label htmlFor="phoneNumber">
-        Last Name
-        <input type="text" {...register('phoneNumber')} />
-      </label>
-      <button type="submit">helooooo</button>
-    </form>
+    <FormProvider methods={methods}>
+      <Stack spacing={2.5}>
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+          <RHFTextField label="First Name" name="firstName" />
+          <RHFTextField label="Last Name" name="lastName" />
+        </Stack>
+        <RHFTextField label="Address" name="address" />
+        <RHFTextField label="City" name="city" />
+        <RHFTextField label="State" name="state" />
+        <RHFTextField label="Birth Date" name="birthDate" />
+        <RHFTextField label="Phone Number" name="phoneNumber" type="number" />
+      </Stack>
+    </FormProvider>
   );
-};
+});
 
 export default PersonalInfo;

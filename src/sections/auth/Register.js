@@ -16,8 +16,7 @@ import { RegisterSteps } from '../../pages/components/multiStepForm';
 export default function Register() {
   return (
     <LoginLayout title="Manage the job more effectively with Minimal">
-      <RegisterSteps />
-      {/* <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
+      <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
         <Typography variant="h4">Get started absolutely free.</Typography>
 
         <Stack direction="row" spacing={0.5}>
@@ -28,8 +27,9 @@ export default function Register() {
           </Link>
         </Stack>
       </Stack>
+      <RegisterSteps />
 
-      <AuthRegisterForm />
+      {/* <AuthRegisterForm /> */}
 
       <Typography component="div" sx={{ color: 'text.secondary', mt: 3, typography: 'caption', textAlign: 'center' }}>
         {'By signing up, I agree to '}
@@ -41,7 +41,7 @@ export default function Register() {
           Privacy Policy
         </Link>
         .
-      </Typography> */}
+      </Typography>
 
       <AuthWithSocial />
     </LoginLayout>
