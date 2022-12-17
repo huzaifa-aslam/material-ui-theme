@@ -24,17 +24,17 @@ export default function AuthGuard({ children }) {
     return <LoadingScreen />;
   }
 
-  if (!isAuthenticated) {
-    if (pathname !== requestedLocation) {
-      setRequestedLocation(pathname);
-    }
-    return <Login />;
-  }
+  // if (!isAuthenticated) {
+  //   if (pathname !== requestedLocation) {
+  //     setRequestedLocation(pathname);
+  //   }
+  //   return <Login />;
+  // }
 
-  if (requestedLocation && pathname !== requestedLocation) {
-    setRequestedLocation(null);
-    return <Navigate to={requestedLocation} />;
-  }
+  // if (requestedLocation && pathname !== requestedLocation) {
+  //   setRequestedLocation(null);
+  //   return <Navigate to={requestedLocation} />;
+  // }
 
   return <>{children}</>;
 }

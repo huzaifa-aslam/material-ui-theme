@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // @mui
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 // hooks
 import useResponsive from '../../hooks/useResponsive';
 // config
@@ -52,7 +52,7 @@ export default function Main({ children, sx, ...other }) {
         flexGrow: 1,
         py: `${HEADER.H_MOBILE + SPACING}px`,
         ...(isDesktop && {
-          px: 2,
+          // px: 2,
           py: `${HEADER.H_DASHBOARD_DESKTOP + SPACING}px`,
           width: `calc(100% - ${NAV.W_DASHBOARD}px)`,
           ...(isNavMini && {
@@ -63,7 +63,7 @@ export default function Main({ children, sx, ...other }) {
       }}
       {...other}
     >
-      {children}
+      <Grid style={{ backgroundColor: '#d3d3d35c' }}>{children}</Grid>
     </Box>
   );
 }

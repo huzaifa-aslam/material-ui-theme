@@ -125,6 +125,8 @@ import {
   DemoSnackbarPage,
   DemoTextMaxLinePage,
   DemoUploadPage,
+  // MARKETING
+  Summary,
 } from './elements';
 
 // ----------------------------------------------------------------------
@@ -190,6 +192,18 @@ export default function Router() {
             { path: 'product/new', element: <EcommerceProductCreatePage /> },
             { path: 'product/:name/edit', element: <EcommerceProductEditPage /> },
             { path: 'checkout', element: <EcommerceCheckoutPage /> },
+          ],
+        },
+        {
+          path: 'marketing',
+          children: [
+            { element: <Navigate to="/dashboard/marketing/summary" replace />, index: true },
+            { path: 'summary', element: <Summary /> },
+            { path: 'cards', element: <UserCardsPage /> },
+            { path: 'list', element: <UserListPage /> },
+            { path: 'new', element: <UserCreatePage /> },
+            { path: ':name/edit', element: <UserEditPage /> },
+            { path: 'account', element: <UserAccountPage /> },
           ],
         },
         {

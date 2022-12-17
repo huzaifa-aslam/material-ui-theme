@@ -34,7 +34,24 @@ const ICONS = {
 };
 
 const navConfig = [
+  {
+    subheader: '',
+    items: [
+      // marketing
+      {
+        title: 'Marketing',
+        path: PATH_DASHBOARD.user.root,
+        icon: ICONS.analytics,
+        children: [
+          { title: 'Summary', path: PATH_DASHBOARD.marketing.summary },
+          { title: 'Keyword Research', path: PATH_DASHBOARD.user.cards },
+          { title: 'Backlinks', path: PATH_DASHBOARD.user.list },
+        ],
+      },
+    ],
+  },
   // GENERAL
+
   // ----------------------------------------------------------------------
   {
     subheader: 'general',

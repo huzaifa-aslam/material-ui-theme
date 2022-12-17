@@ -28,6 +28,9 @@ export const GeneralBankingPage = Loadable(lazy(() => import('../pages/dashboard
 export const GeneralBookingPage = Loadable(lazy(() => import('../pages/dashboard/GeneralBookingPage')));
 export const GeneralFilePage = Loadable(lazy(() => import('../pages/dashboard/GeneralFilePage')));
 
+// DASHBOARD: MARKETING
+export const Summary = Loadable(lazy(() => import('../pages/dashboard/marketing/summary')));
+
 // DASHBOARD: ECOMMERCE
 export const EcommerceShopPage = Loadable(lazy(() => import('../pages/dashboard/EcommerceShopPage')));
 export const EcommerceProductDetailsPage = Loadable(
