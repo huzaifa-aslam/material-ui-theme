@@ -4,6 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import LinearProgress from '@mui/material/LinearProgress';
 import { useTheme } from '@mui/material/styles';
 
 import { Container, Grid, Button, Paper, Typography } from '@mui/material';
@@ -75,17 +76,19 @@ export default function GeneralEcommercePage() {
               </FormControl>
             </Grid>
           </Grid>
-
-          <Grid item xs={12} md={6} className={styles.height}>
+          <Grid item xs={12} md={6}>
             <Paper className={styles.detail}>
               <Grid className={styles.picture}>
                 <img className={styles.img} src={dummyImg} alt="dummyImg" />
               </Grid>
-              <Typography className={styles.heading} variant="h5" gutterBottom>
-                Low Optimization (43%)
-              </Typography>
+              <Grid item xs={12} md={12} className={styles.optimation}>
+                <Typography className={styles.heading} variant="h5" gutterBottom>
+                  Low Optimization (43%)
+                </Typography>
+                <LinearProgress className={styles.progress} variant="determinate" value={50} />
+              </Grid>
               <Grid container className={styles.pageDetail}>
-                <Grid xs={12} md={6} className={styles.contentBetween}>
+                <Grid item xs={12} md={6} className={styles.contentBetween}>
                   <Grid>
                     <Typography variant="subtitle2">Pages Crowled</Typography>
 
@@ -93,7 +96,7 @@ export default function GeneralEcommercePage() {
                   </Grid>
                   <span className={styles.line} />
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid item xs={12} md={6}>
                   <Typography variant="subtitle2">Total Errors</Typography>
 
                   <b>100</b>
@@ -127,35 +130,33 @@ export default function GeneralEcommercePage() {
               </Grid>
             </Grid>
 
-            <Grid item xs={12} md={12}>
-              <Grid container spacing={3}>
-                <Grid item md={6} xs={12}>
-                  <LineCard
-                    title="Total Backlinks"
-                    percent={2.6}
-                    total={765}
-                    chart={{
-                      colors: [theme.palette.primary.main],
-                      series: [22, 8, 35, 50, 82, 84, 77, 12, 87, 43],
-                    }}
-                  />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                  <LineCard
-                    title="Global Rank"
-                    percent={-0.1}
-                    total={185}
-                    chart={{
-                      colors: [theme.palette.info.main],
-                      series: [56, 47, 40, 62, 73, 30, 23, 54, 67, 68],
-                    }}
-                  />
-                </Grid>
+            <Grid container spacing={3} className={styles.marginBottom}>
+              <Grid item md={6} xs={12}>
+                <LineCard
+                  title="Total Backlinks"
+                  percent={2.6}
+                  total={765}
+                  chart={{
+                    colors: [theme.palette.primary.main],
+                    series: [22, 8, 35, 50, 82, 84, 77, 12, 87, 43],
+                  }}
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <LineCard
+                  title="Global Rank"
+                  percent={-0.1}
+                  total={185}
+                  chart={{
+                    colors: [theme.palette.info.main],
+                    series: [56, 47, 40, 62, 73, 30, 23, 54, 67, 68],
+                  }}
+                />
               </Grid>
             </Grid>
           </Grid>
 
-          <Grid container className={styles.averagePosition}>
+          <Grid container className={`${styles.averagePosition} ${styles.padd}}`}>
             <Grid item xs={12} md={6}>
               <AveragePosition
                 title="Average Position"
@@ -181,7 +182,7 @@ export default function GeneralEcommercePage() {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <Paper className={styles.domainDetail}>
+              <Paper className={`${styles.domainDetail} ${styles.margin} ${styles.marginTop}`}>
                 <Typography variant="h5" gutterBottom>
                   Domain Info
                 </Typography>

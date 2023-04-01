@@ -30,7 +30,7 @@
 }
 .heading{
     text-align: center;
-    padding: 12px;
+    padding: 12px 12px 4px 12px;
     color: #ff0000bd;
 }
 .pageDetail{
@@ -51,7 +51,7 @@
     padding: 35px 20px 0px 20px;
 }
 .height{
-    height: 480px;
+    /* height: 480px; */
 }
 .marginBottom{
    
@@ -59,7 +59,7 @@
 }
 .domainDetail{
     padding: 20px;
-    margin: 0px 20px;
+    /* margin: 0px 20px; */
     height: 452px;
     box-shadow: 1px 1px 5px 0px lightgrey
 }
@@ -77,4 +77,27 @@
 .detail{
     height: 420px;
     border-radius: 15px;
+}
+.optimation{
+    width: 50%;
+    margin: 0 auto;
+}
+.progress{
+    margin: 0px 39px 5px 39px;
+}
+
+@media (min-width: 899px)  {
+    .margin{
+        margin: 0px 20px;
+    }
+    .padd{
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 899px)  {
+    .marginTop{
+        margin-top: 10px !important;
+    }
+    
 }
